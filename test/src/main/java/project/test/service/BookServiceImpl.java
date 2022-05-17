@@ -71,7 +71,7 @@ public class BookServiceImpl implements BookService{
 	public List<BookVO> selectBookList(String keyword) {
 		List<BookVO> books = new ArrayList<BookVO>();
 		BookVO vo;
-		String sql = "SELECT * FROM BOOK_LIST WHERE CONTENT LIKE %||?||%";
+		String sql = "SELECT * FROM BOOK_LIST WHERE CONTENT LIKE '%'||?||'%'";
 		try {
 			conn = dao.getConnection();
 			psmt = conn.prepareStatement(sql);
